@@ -36,3 +36,21 @@ Tts.addEventListener('tts-cancel',(event)=>{
 
 
 };
+
+
+export const playTTS = async(message:string)=>{
+  Tts.getInitStatus().then(
+    () => {
+      console.log('TTS initialized successfully');
+    },
+    (err) => {
+      if (err.code === 'no_engine') {
+        console.log('No TTS engine found. Attempting to install...');
+        Tts.requestInstallEngine();
+      } else {
+        console.error('TTS initialization error:', err);
+      }
+    }
+  );
+  Tts.speak(message)
+}

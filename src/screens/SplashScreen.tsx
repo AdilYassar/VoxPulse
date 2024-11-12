@@ -10,8 +10,8 @@ import { screenheight, screenWidth } from '../utils/Scaling';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomText from '../components/global/CustomText';
 import LottieView from 'lottie-react-native';
-import { initializeTtsListeners } from '../utils/ttsListener';
-import Tts from 'react-native-tts';
+import { initializeTtsListeners, playTTS } from '../utils/ttsListener';
+
 
 const bottomColors = [...lightColors].reverse()
 
@@ -24,7 +24,7 @@ const messageContainerAnimation = useSharedValue(screenheight*0.8)
 const launchAnimation = async()=>{
     messageContainerAnimation.value = screenheight*0.001;
     setTimeout(()=>{
-        Tts.speak('Hello World! i am Vox Pulse, Your Own Personal AI Powered Butler')
+       playTTS('Hello World! i am Vox Pulse, Your Own Personal AI Powered Butler')
     },600)
     setTimeout(()=>{
         resetAndNavigate('VoxPulseScreen')

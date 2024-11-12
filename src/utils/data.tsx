@@ -1,4 +1,4 @@
-export const bigHero6Data = [
+export const VoxPulseData = [
     'water',
     'pedometer',
     'health',
