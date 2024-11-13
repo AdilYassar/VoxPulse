@@ -13,6 +13,7 @@ import { playSound } from '../utils/voiceUtils';
 import { prompt } from '../utils/data';
 import PedoMeter from '../components/PedoMeter/PedoMeter';
 import Instructions from '../components/global/VoxPulse/Instructions';
+import { askAI } from '../service/apiService';
 
 const VoxPulseScreen = () => {
   const [showInstructions, setShowInstructions] = useState(false);
@@ -38,6 +39,9 @@ const VoxPulseScreen = () => {
         setMessage('meditation');
         return;
       }
+      const data = await askAI(promptText)
+      setMessage(data);
+      playTTS(data)
       if (type === 'happiness') {
         setTimeout(() => {
           playSound(sound);
@@ -45,7 +49,7 @@ const VoxPulseScreen = () => {
       } else {
         playSound(sound);
       }
-      setMessage(type);
+    
       unBlur();
     } catch (error: any) {
       handleError(error);
@@ -110,7 +114,7 @@ const VoxPulseScreen = () => {
 
   return (
     <View style={styles.container}>
-       <Background blurOpacity={blurOpacity} />
+      <Background blurOpacity={blurOpacity} />
       {message && (
         <Instructions
           onCross={() => {
@@ -144,7 +148,7 @@ const VoxPulseScreen = () => {
         </View>
       )}
 
-     
+
       {!showInstructions && <VoxPulse onPress={onOptionPressHandler} />}
     </View>
   );

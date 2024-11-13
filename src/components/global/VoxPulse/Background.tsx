@@ -9,7 +9,7 @@ const Background: FC<{ blurOpacity: any }> = ({ blurOpacity }) => {
       <Image source={require('../../../assets/images/10.jpg')} style={styles.img} />
       <Animated.View style={[styles.absolute, { opacity: blurOpacity }]}>
         {blurOpacity ? (
-          <BlurView style={styles.absolute} blurType="light" blurAmount={10} />
+          <BlurView reducedTransparencyFallbackColor='white' style={styles.absolute} blurType="light" blurAmount={10} />
         ) : null}
       </Animated.View>
     </View>

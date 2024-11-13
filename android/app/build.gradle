@@ -84,7 +84,7 @@ android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
-
+    namespace "com.stepcounter"
     namespace "com.voxpulse"
     defaultConfig {
         applicationId "com.voxpulse"
