@@ -23,9 +23,13 @@ const Water = () => {
             const timestamp = new Date().toISOString()
             addWaterIntake(timestamp)
             playSound('ting2')
+            setTimeout(()=>{
+                playTTS('Ohh, Good Work Cutie, For a gorgeous Skin like Yours Water is a big contributor')
+            },1000)
+
         } else {
             playTTS("You have Completed Your Daily Intakes !!!! Proud Of You Cutie")
-            
+
         }
     }
     return (

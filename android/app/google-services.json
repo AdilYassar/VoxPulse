@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "320640962121",
+    "project_id": "voxpulse-e8e4c",
+    "storage_bucket": "voxpulse-e8e4c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320640962121:android:183b148821ac71a196b998",
+        "android_client_info": {
+          "package_name": "com.voxpulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY7uv77R05AtHGvGrdkpDuuoaGiBEKRA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

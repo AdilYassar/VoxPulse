@@ -24,7 +24,7 @@ const getSoundPath = (soundName: string) => {
     case 'ting2':
       return require('../assets/sfx/ting2.mp3');
     case 'notification':
-      return require('../assets/sfx/notification.mp3');
+      return require('../assets/sfx/notification.wav');
     default:
       throw new Error(`Sound ${soundName} not found`);
   }
