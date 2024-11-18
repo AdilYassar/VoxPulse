@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import StepCounter from '@dongminyu/react-native-step-counter';
 import notifee from '@notifee/react-native'
 import { Alert } from 'react-native';
-
+import messaging from '@react-native-firebase/messaging'
+import { registerToken } from '../service/apiService';
 
 export const batteryOptimizationCheck = async()=>{
 // 1. checks if battery optimization is enabled
@@ -60,5 +62,9 @@ if (powerManagerInfo.activity) {
 export const requestPermission = async () =>{
     await notifee.requestPermission()
     await notifee.setBadgeCount(0)
+    await messaging().registerDeviceForRemoteMessages();
+    const token = await messaging().getToken()
+    console.log(token)
+    await registerToken(token)
     StepCounter.stopStepCounterUpdate()
 }
